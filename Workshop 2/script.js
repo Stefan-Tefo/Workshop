@@ -5,31 +5,35 @@ let shipsUrl = `${url}starships/?page=<PAGE_NUMBER>`;
 html = {
 	peopleBtn: document.querySelector("#peopleBtn"),
 	result: document.querySelector("#result"),
-	shipsBtn: document.querySelector("#shipsBtn")
+	shipsBtn: document.querySelector("#shipsBtn"),
+	loader: document.querySelector("#loader"),
+	nextBtn:document.querySelector("#nextBtn"),
+	prevBtn:document.querySelector("#prevBtn")
 }
 
 html.peopleBtn.addEventListener("click", () => showPeopleButton())
 html.shipsBtn.addEventListener("click", () => showShipsButton())
 
 function showShipsButton() {
+	toggleLoader(true)
+	html.result.innerHTML = "";
 	fetch("https://swapi.dev/api/starships/")
 		.then((res) => res.json())
-		.them((body) => showPeopleButton(body))
+		.then((body) => showArrayOfAllShips(body))
+		.catch(error => console.error(error))
+		.finally(() => toggleLoader(false));
 }
 
 function showPeopleButton() {
+	toggleLoader(true)
+	html.result.innerHTML = "";
 	fetch("https://swapi.dev/api/people/")
 		.then((res) => res.json())
 		.then((body) => showArrayOfAllPeople(body))
+		.catch(error => console.error(error))
+		.finally(() => toggleLoader(false));
 
 }
-
-function showArrayOfAllShips(body) {
-	body.results.forEach((item) => {
-		html.result.innerHTML += generateTableTwo(item)
-	});
-}
-
 function showArrayOfAllPeople(body) {
 	// debugger
 	body.results.forEach((item) => {
@@ -37,7 +41,14 @@ function showArrayOfAllPeople(body) {
 	});
 }
 
-function generateTableTwo(item) {
+function showArrayOfAllShips(body) {
+	body.results.forEach((item1) => {
+		html.result.innerHTML += generateTableTwo(item1)
+	});
+}
+
+
+function generateTableTwo(item1) {
 	return `
     <div class="row yellow padding">
 				<div class="col">Name</div>
@@ -48,16 +59,15 @@ function generateTableTwo(item) {
 				<div class="col">Class</div>
 			</div>
 			<div class="row white padding">
-				<div class="col">${item.name}</div>
-				<div class="col">${item.model}</div>
-				<div class="col">${item.manufacturer}</div>
-				<div class="col">${item.cost_in_credits}</div>
-				<div class="col">${item.passengers}</div>
-				<div class="col">${item.starship_class}</div>
+				<div class="col">${item1.name}</div>
+				<div class="col">${item1.model}</div>
+				<div class="col">${item1.manufacturer}</div>
+				<div class="col">${item1.cost_in_credits}</div>
+				<div class="col">${item1.passengers}</div>
+				<div class="col">${item1.starship_class}</div>
 			</div>
     `
 }
-
 
 function generateTableOne(item) {
 	return `
@@ -75,7 +85,15 @@ function generateTableOne(item) {
 				<div class="col">${item.mass}</div>
 				<div class="col">${item.gender}</div>
 				<div class="col">${item.birth_year}</div>
-				<div class="col">${item.films.lenght}</div>
+				<div class="col">${item.films.length}</div>
 			</div>
     `
+}
+
+function toggleLoader(loader) {
+	if (loader) {
+		html.loader.style.display = 'block';
+	} else {
+		html.loader.style.display = 'none';
+	}
 }
