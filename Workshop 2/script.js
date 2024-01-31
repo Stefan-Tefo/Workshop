@@ -7,19 +7,31 @@ html = {
 	result: document.querySelector("#result"),
 	shipsBtn: document.querySelector("#shipsBtn"),
 	loader: document.querySelector("#loader"),
-	nextBtn:document.querySelector("#nextBtn"),
-	prevBtn:document.querySelector("#prevBtn")
+	nextBtn: document.querySelector("#nextBtn"),
+	prevBtn: document.querySelector("#prevBtn")
 }
 
 html.peopleBtn.addEventListener("click", () => showPeopleButton())
 html.shipsBtn.addEventListener("click", () => showShipsButton())
+html.nextBtn.addEventListener("click", () => goNext())
+
+function goNext() {
+	fetch("https://swapi.dev/api/people/?page=2")
+		.then(res => res.json())
+		.then((body) => {
+			showPeopleButton(body)
+		})
+}
 
 function showShipsButton() {
 	toggleLoader(true)
 	html.result.innerHTML = "";
 	fetch("https://swapi.dev/api/starships/")
 		.then((res) => res.json())
-		.then((body) => showArrayOfAllShips(body))
+		.then((body) => {
+			showArrayOfAllShips(body)
+			nextBtn.style.display = "block"
+		})
 		.catch(error => console.error(error))
 		.finally(() => toggleLoader(false));
 }
@@ -29,7 +41,10 @@ function showPeopleButton() {
 	html.result.innerHTML = "";
 	fetch("https://swapi.dev/api/people/")
 		.then((res) => res.json())
-		.then((body) => showArrayOfAllPeople(body))
+		.then((body) => {
+			showArrayOfAllPeople(body)
+			nextBtn.style.display = "block"
+		})
 		.catch(error => console.error(error))
 		.finally(() => toggleLoader(false));
 
