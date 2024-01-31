@@ -16,11 +16,16 @@ html.shipsBtn.addEventListener("click", () => showShipsButton())
 html.nextBtn.addEventListener("click", () => goNext())
 
 function goNext() {
+	toggleLoader(true)
+	html.result.innerHTML = "";
 	fetch("https://swapi.dev/api/people/?page=2")
-		.then(res => res.json())
+		.then((res) => res.json())
 		.then((body) => {
+			console.log(body);
 			showPeopleButton(body)
 		})
+		.catch(error => console.error(error))
+		.finally(() => toggleLoader(false));
 }
 
 function showShipsButton() {
