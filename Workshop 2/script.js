@@ -8,7 +8,7 @@ html = {
 	shipsBtn: document.querySelector("#shipsBtn"),
 	loader: document.querySelector("#loader"),
 	nextBtn: document.querySelector("#nextBtn"),
-	prevBtn: document.querySelector("#prevBtn")
+	prevBtn: document.querySelector("#prevBtn"),
 }
 
 html.peopleBtn.addEventListener("click", () => showPeopleButton())
