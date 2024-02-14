@@ -37,14 +37,17 @@ function getTheCity() {
         .then((res) => res.json())
         .then((body) => {
             console.log(body);
+            showWeatherAlert(body)
+            const listMax = getMaxTemp(body.list[0].main?.max_temp)
+            getMaxTemp(body, listMax)
         })
 }
 
-function showWeatherAlert() {
+function showWeatherAlert(listMax) {
     return statisticsResult.innerHTML = `
     <div>
         <h1>Temperature</h1>
-        <div>Highest:${body.main}</div>
+        <div>Highest:${listMax}</div>
         <div>Avrage:</div>
         <div>Lowest:</div>
     </div>
@@ -59,4 +62,12 @@ function showWeatherAlert() {
         <div>Coldest time of the days ahead:</div>
     </div>
     `
+}
+
+function getMaxTemp(listMax) {
+    if (listMax) {
+        return main[0].map(el => el.max_temp).join("")
+    } else {
+        return "No max temp"
+    }
 }
