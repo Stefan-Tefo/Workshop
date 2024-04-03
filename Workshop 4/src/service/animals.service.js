@@ -9,4 +9,14 @@ export class AnimalsService {
 
         return newAnimal.save()
     }
+    static async getAnimalById(id) {
+        return Animal.findById(id)
+    }
+    static async updateAnAnimal(id, { name }) {
+
+        return Animal.findByIdAndUpdate(id, { name }, { new: true })
+    }
+    static async deleteAnimalById(id){
+        return Animal.findByIdAndDelete(id)
+    }
 }

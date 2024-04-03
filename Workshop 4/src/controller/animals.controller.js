@@ -6,9 +6,9 @@ export class AnimalsController {
         try {
             const animal = await AnimalsService.getAllAnimalsFromTheShelter(req.body)
 
-            res.send(animal)
+            res.json(animal)
         } catch (error) {
-            res.status(500).send({ message: error.message });
+            res.status(500).json({ message: error.message });
         }
     }
     static async createAnimal(req, res) {
@@ -20,10 +20,37 @@ export class AnimalsController {
 
             const animal = await AnimalsService.createAnimal(req.body)
 
-            res.send(animal)
+            res.json(animal)
         } catch (error) {
             console.log(error)
-            res.status(500).send({ message: error.message });
+            res.status(500).json({ message: error.message });
+        }
+    }
+    static async getAnimalById(req, res) {
+        try {
+            const animal = await AnimalsService.getAnimalById(req.params.id)
+
+            res.json(animal)
+        } catch (error) {
+            res.status(500).json({ message: error.message });
+        }
+    }
+    static async updateAnAnimal(req, res) {
+        try {
+            const animal = await AnimalsService.updateAnAnimal(req.params.id, req.body)
+
+            res.json(animal)
+        } catch (error) {
+            res.status(500).json({ message: error.message });
+        }
+    }
+    static async deleteAnimalById(req,res){
+        try {
+            const animal = await AnimalsService.deleteAnimalById(req.params.id)
+
+            res.json(animal)
+        } catch (error) {
+            res.status(500).json({ message: error.message });
         }
     }
 }

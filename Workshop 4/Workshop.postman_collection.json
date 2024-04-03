@@ -1,0 +1,392 @@
+{
+	"info": {
+		"_postman_id": "55d01a40-ba2e-453e-b90d-2d85b5f57ce7",
+		"name": "Workshop",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "33456880"
+	},
+	"item": [
+		{
+			"name": "animal shalter",
+			"item": [
+				{
+					"name": "create post",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"title\": \"Homework1\",\r\n    \"content\": \"Homework1\",\r\n    \"likes\":[]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/posts/create/:userId",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"posts",
+								"create",
+								":userId"
+							],
+							"variable": [
+								{
+									"key": "userId",
+									"value": "660ae39fa060a17c68c11953"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete post",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/api/posts/:id/user/:userId",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"posts",
+								":id",
+								"user",
+								":userId"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "660c318c77833983b7824cc2"
+								},
+								{
+									"key": "userId",
+									"value": "660ae39fa060a17c68c11953"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "edit post",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"content\":\"Homework2\"  \r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/posts/editpost/:id/user/:userId",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"posts",
+								"editpost",
+								":id",
+								"user",
+								":userId"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "660c32b4c9a2fdf96b3aae7c"
+								},
+								{
+									"key": "userId",
+									"value": "660ae39fa060a17c68c11953"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "toggle like",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/api/posts/like/:id/user/:userId",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"posts",
+								"like",
+								":id",
+								"user",
+								":userId"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "660c32b4c9a2fdf96b3aae7c"
+								},
+								{
+									"key": "userId",
+									"value": "660b0931c8fdae788690a056"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get  post by id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/api/posts/userId/:id",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"posts",
+								"userId",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "660ae39fa060a17c68c11953"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "get all animals",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/api/shelter/animals",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"shelter",
+						"animals"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get all users",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/api/shelter/adoptions",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"shelter",
+						"adoptions"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get animal by id",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/api/shelter/animals/:id",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"shelter",
+						"animals",
+						":id"
+					],
+					"variable": [
+						{
+							"key": "id",
+							"value": "660d97737cc2fb148f2640e8"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "delete animal by id",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/api/shelter/animals/:id",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"shelter",
+						"animals",
+						":id"
+					],
+					"variable": [
+						{
+							"key": "id",
+							"value": "660d97737cc2fb148f2640e8"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "create animal",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"Rex\",\r\n    \"type\": \"Dog\",\r\n    \"breed\": \"German Shepherd\",\r\n    \"age\": 4,\r\n    \"status\": \"Available\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/shelter/animals",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"shelter",
+						"animals"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "create user",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"adopterName\": \"John Doe\",\r\n    \"email\": \"johndoe@example.com\",\r\n    \"user\": [],\r\n    \"adoptionDate\": \"2023-04-22\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/shelter/adoptions/:id",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"shelter",
+						"adoptions",
+						":id"
+					],
+					"variable": [
+						{
+							"key": "id",
+							"value": "660d957de30e4eee9fc80cc0"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "update animal",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"Rex\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/shelter/animals/:id",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"shelter",
+						"animals",
+						":id"
+					],
+					"variable": [
+						{
+							"key": "id",
+							"value": "660d97737cc2fb148f2640e8"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
