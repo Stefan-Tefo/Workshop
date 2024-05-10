@@ -1,5 +1,4 @@
-import { IsInt, IsOptional, IsString, Min, IsBoolean, IsNotEmpty } from "class-validator";
-import { Employe } from "../../employe/employe.entity";
+import { IsInt, IsOptional, IsString, Min, IsBoolean } from "class-validator";
 
 
 export class DepartmentUpdateDto {
@@ -9,25 +8,19 @@ export class DepartmentUpdateDto {
 
     @IsString()
     @IsOptional()
-    @IsNotEmpty()
     description?: string
 
     @IsBoolean()
     @IsOptional()
     is_active?: boolean
 
-    @IsOptional()
-    employees?: Employe[]
-
     @IsString()
-    @IsNotEmpty()
     @IsOptional()
     office_location?: string
 
     @IsInt()
     @Min(0)
     @IsOptional()
-    @IsNotEmpty()
-    budeget?: number
+    budget?: number
 }
 

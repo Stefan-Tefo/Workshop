@@ -2,10 +2,10 @@ import { Module } from '@nestjs/common';
 import { DepartmentController } from './department.controller';
 import { DepartmentService } from './department.service';
 import { ConfigModule } from '@nestjs/config';
-import { DatabaseModule } from 'src/database/database.module';
+import { DatabaseModule } from '../database/database.module';
 import { Department } from './department.entity';
 import { TypeOrmModule } from '@nestjs/typeorm';
-import { EmployeModule } from 'src/employe/employe.module';
+import { EmployeModule } from '../employe/employe.module';
 
 @Module({
   imports: [ConfigModule.forRoot({

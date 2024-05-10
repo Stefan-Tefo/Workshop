@@ -15,8 +15,7 @@ export class Department {
 
     @Column({ type: Boolean })
     is_active: boolean
-
-    @Column({ type: String, default: [] })
+    
     @OneToMany(() => Employe, (employees) => employees.department)
     employees: Employe[]
 
