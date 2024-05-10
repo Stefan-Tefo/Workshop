@@ -304,7 +304,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"name\": \"IT\",\r\n    \"description\": \"Information Technology Department\",\r\n    \"is_active\": true,\r\n    \"office_location\": \"New York\",\r\n    \"budget\": 100000\r\n}",
+							"raw": "{\r\n    \"office_location\": \"New Yorkk\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -326,7 +326,7 @@
 							"variable": [
 								{
 									"key": "id",
-									"value": "",
+									"value": "6f40aa0a-008d-4704-96c1-9f871294ea52",
 									"uuid": "69b0061f-c696-4c0e-8c7e-9e09a697049e"
 								}
 							]

@@ -5,11 +5,12 @@ import { ConfigModule } from '@nestjs/config';
 import { DatabaseModule } from 'src/database/database.module';
 import { Department } from './department.entity';
 import { TypeOrmModule } from '@nestjs/typeorm';
+import { EmployeModule } from 'src/employe/employe.module';
 
 @Module({
   imports: [ConfigModule.forRoot({
     isGlobal: true,
-  }),DatabaseModule, TypeOrmModule.forFeature([Department])],
+  }),DatabaseModule, TypeOrmModule.forFeature([Department]),EmployeModule],
   controllers: [DepartmentController],
   providers: [DepartmentService],
 })
