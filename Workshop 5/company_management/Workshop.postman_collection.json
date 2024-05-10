@@ -1,0 +1,340 @@
+{
+	"info": {
+		"_postman_id": "55d01a40-ba2e-453e-b90d-2d85b5f57ce7",
+		"name": "Workshop",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "33456880"
+	},
+	"item": [
+		{
+			"name": "animal shalter",
+			"item": [
+				{
+					"name": "get all animals",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/api/shelter/animals",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"shelter",
+								"animals"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get all users",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/api/shelter/adoptions",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"shelter",
+								"adoptions"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get animal by id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/api/shelter/animals/:id",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"shelter",
+								"animals",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "660d97737cc2fb148f2640e8",
+									"uuid": "96a2ef0b-af56-4d58-ab12-6ec5cc46e3c9"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete animal by id",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/api/shelter/animals/:id",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"shelter",
+								"animals",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "660d97737cc2fb148f2640e8",
+									"uuid": "3ff26732-95d3-4724-83bd-7d06dd6ba2ed"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "create animal",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Rex\",\r\n    \"type\": \"Dog\",\r\n    \"breed\": \"German Shepherd\",\r\n    \"age\": 4,\r\n    \"status\": \"Available\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/shelter/animals",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"shelter",
+								"animals"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "create user",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"adopterName\": \"John Doe\",\r\n    \"email\": \"johndoe@example.com\",\r\n    \"user\": [],\r\n    \"adoptionDate\": \"2023-04-22\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/shelter/adoptions/:id",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"shelter",
+								"adoptions",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "660d957de30e4eee9fc80cc0",
+									"uuid": "6c6d7ae6-150e-4f88-9d2f-a82fd55dde53"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update animal",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Rex\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/shelter/animals/:id",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"shelter",
+								"animals",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "660d97737cc2fb148f2640e8",
+									"uuid": "668e6e9e-3b7a-4b39-9c0e-319d40a7bc0b"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "department_menagment",
+			"item": [
+				{
+					"name": "get all departments",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/api/department",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"department"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete department",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/api/department/:id",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"department",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "",
+									"uuid": "09bb076b-445a-475d-963e-ffeefe954f94"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "create department",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"IT\",\r\n    \"description\": \"Information Technology Department\",\r\n    \"is_active\": true,\r\n    \"office_location\": \"New York\",\r\n    \"budget\": 100000\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/department",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"department"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update department",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"IT\",\r\n    \"description\": \"Information Technology Department\",\r\n    \"is_active\": true,\r\n    \"office_location\": \"New York\",\r\n    \"budget\": 100000\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/department/:id",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"department",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "",
+									"uuid": "69b0061f-c696-4c0e-8c7e-9e09a697049e"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
